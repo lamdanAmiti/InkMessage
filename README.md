@@ -1,11 +1,4 @@
-![InkMessage](.github/octoshrimpy_quik.jpg)
-
 # InkMessage
-
-[![Manual Release](https://github.com/octoshrimpy/quik/actions/workflows/manual-release.yml/badge.svg)](https://github.com/octoshrimpy/quik/actions/workflows/manual-release.yml)
-<a href="https://hosted.weblate.org/engage/quik/">
-<img src="https://hosted.weblate.org/widget/quik/svg-badge.svg" alt="Translation status" />
-</a>
 
 InkMessage is a cleaned UI for E-ink based on [QUIK messages](https://github.com/octoshrimpy/quik). It focuses on high contrast and simplicity suitable for E-ink displays, while retaining the powerful features of its predecessors.
 
@@ -38,3 +31,6 @@ InkMessage stands on the shoulders of giants. We owe a massive debt of gratitude
 ## License
 
 InkMessage is released under the **The GNU General Public License v3.0 (GPLv3)**, which can be found in the [LICENSE](LICENSE) file in the root of this project.
+
+[Liberapay](https://liberapay.com/octoshrimpy/donate) | [Ko-Fi](https://ko-fi.com/octoshrimpy/donate) | [Patreon](https://patreon.com/octoshrimpy)
+
