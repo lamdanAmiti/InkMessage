@@ -14,11 +14,16 @@ It is a fork of QUIK, which itself is a continuation of [QKSMS](https://github.c
 
 
 ## Features
-
 - **Optimized for E-ink**: High contrast interface and simplified visuals.
+- Black and white theme throughout
+- Incoming messages solid black border, white background.
+- Outgoing messages thinner, dashed border - a real delight.
+- Smarter message sorting — groups organized cleanly, unknown numbers separated
+- New modern themed audio player, not that tragic one before with a png nof waves in the background.
+- Clearer thumbnail images, that's how Mudita's works
+- Copy + forward full messages
 - Scheduled Messages
 - Message Backup
-- Speech to Text and Text to Speech
 - Message Blocking and Archiving
 - Voice Messages
 - Attachments of any type of file
