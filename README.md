@@ -1,5 +1,11 @@
 # InkMessage
 
+<div style="display: flex; justify-content: space-between;">
+<img src="1.png" width="49%" alt="InkMessage Screenshot 1"/>
+<img src="2.png" width="49%" alt="InkMessage Screenshot 2"/>
+</div>
+
+
 InkMessage is a cleaned UI for E-ink based on [QUIK messages](https://github.com/octoshrimpy/quik). It focuses on high contrast and simplicity suitable for E-ink displays, while retaining the powerful features of its predecessors.
 
 It is a fork of QUIK, which itself is a continuation of [QKSMS](https://github.com/moezbhatti/qksms).
