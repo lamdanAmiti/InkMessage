@@ -58,3 +58,6 @@ my-release-key.keystore
 my-release-key.keystore.base64
 .secrets
 android-keystore/keystore.b64
+*.keystore
+key.properties
+.gradlerc
