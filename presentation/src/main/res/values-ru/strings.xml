@@ -169,7 +169,7 @@
     <string name="backup_disclaimer">В настоящее время поддерживается резервное копирование и восстановление только SMS. Поддержка MMS и регулярные резервные копии появятся в ближайшее время!</string>
     <string name="backup_now">Резервировать</string>
     <string name="backup_progress_parsing">Анализ резервной копии…</string>
-    <string name="backup_progress_running">%d/%d сообщений</string>
+    <string name="backup_progress_running">%1$d/%2$d сообщений</string>
     <string name="backup_progress_saving">Сохранение резервной копии…</string>
     <string name="backup_progress_syncing">Синхронизация сообщений…</string>
     <string name="backup_progress_finished">Завершено!</string>

@@ -19,7 +19,7 @@
 <manifest  xmlns:android="http://schemas.android.com/apk/res/android">
     <application>
         <provider
-            android:name="com.moez.QKSMS.contentproviders.MmsPartProvider"
+            android:name="com.message.ink.contentproviders.MmsPartProvider"
             android:authorities="${applicationId}.mmspart"
             android:enabled="true"
             android:exported="false"

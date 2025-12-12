@@ -168,7 +168,7 @@
     <string name="backup_disclaimer">Тренутно су подржане резервне копије само SMS порука. Ускоро очекујте подршку за MMS поруке и заказано прављење резервних копија!</string>
     <string name="backup_now">Одмах направите копију</string>
     <string name="backup_progress_parsing">Обрађујем копију…</string>
-    <string name="backup_progress_running">%d/%d порука</string>
+    <string name="backup_progress_running">%1$d/%2$d порука</string>
     <string name="backup_progress_saving">Сачувавам резерну копију…</string>
     <string name="backup_progress_syncing">Синхронизујем поруке…</string>
     <string name="backup_progress_finished">Завршено!</string>

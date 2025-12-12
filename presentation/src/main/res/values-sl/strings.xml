@@ -169,7 +169,7 @@
     <string name="backup_disclaimer">Trenutno so za ustvarjanje in obnovo varnostnih kopij podprta le sporočila SMS. MMS podpora in varnostne kopije pridejo kmalu!</string>
     <string name="backup_now">Ustvari varnostno kopijo</string>
     <string name="backup_progress_parsing">Razčlenjevanje varnostne kopije…</string>
-    <string name="backup_progress_running">%d/%d sporočil</string>
+    <string name="backup_progress_running">%1$d/%2$d sporočil</string>
     <string name="backup_progress_saving">Shranjevanje varnostne kopije…</string>
     <string name="backup_progress_syncing">Sinhroniziranje sporočil…</string>
     <string name="backup_progress_finished">Končano!</string>

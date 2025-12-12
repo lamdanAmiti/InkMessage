@@ -167,7 +167,7 @@
     <string name="backup_disclaimer">För närvarande så stöds endast SMS av Säkerhetskopiera och Återställ. MMS-stöd och schemalagda säkerhetskopieringar kommer att dyka upp inom kort!</string>
     <string name="backup_now">Säkerhetskopiera nu</string>
     <string name="backup_progress_parsing">Tolkar säkerhetskopieringen…</string>
-    <string name="backup_progress_running">%d/%d meddelanden</string>
+    <string name="backup_progress_running">%1$d/%2$d meddelanden</string>
     <string name="backup_progress_saving">Sparar säkerhetskopian…</string>
     <string name="backup_progress_syncing">Synkroniserar meddelandena…</string>
     <string name="backup_progress_finished">Avslutad!</string>

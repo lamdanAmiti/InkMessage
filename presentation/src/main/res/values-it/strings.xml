@@ -168,7 +168,7 @@
     <string name="backup_disclaimer">Attualmente Backup e Restore supportano solo gli SMS. Il supporto per gli MMS ed i backup schedulati arriverà presto!</string>
     <string name="backup_now">Backup adesso</string>
     <string name="backup_progress_parsing">L\'analisi del backup…</string>
-    <string name="backup_progress_running">%d/%d messaggi</string>
+    <string name="backup_progress_running">%1$d/%2$d messaggi</string>
     <string name="backup_progress_saving">Salvataggio backup…</string>
     <string name="backup_progress_syncing">Sincronizzazione messaggi…</string>
     <string name="backup_progress_finished">Terminato!</string>

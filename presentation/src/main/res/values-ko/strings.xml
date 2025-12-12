@@ -166,7 +166,7 @@
     <string name="backup_disclaimer">아직 SMS만 백업과 복원기능이 지원됩니다. MMS지원과 백업 스케줄 기능은 곧 찾아옵니다!</string>
     <string name="backup_now">지금 백업하기</string>
     <string name="backup_progress_parsing">분석 중...</string>
-    <string name="backup_progress_running">%d/%d 메시지</string>
+    <string name="backup_progress_running">%1$d/%2$d 메시지</string>
     <string name="backup_progress_saving">저장 중...</string>
     <string name="backup_progress_syncing">동기화 중...</string>
     <string name="backup_progress_finished">끝!</string>

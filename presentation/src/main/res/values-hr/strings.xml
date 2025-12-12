@@ -168,7 +168,7 @@
     <string name="backup_disclaimer">Trenutno je samo SMS podržan u sigurnosnom kopiranju i vraćanju. Podrška za MMS i zakazane sigurnosne kopije dolazi uskoro!</string>
     <string name="backup_now">Sig. kopiraj sada</string>
     <string name="backup_progress_parsing">Analiziranje sig. kopije…</string>
-    <string name="backup_progress_running">%d/%d poruka</string>
+    <string name="backup_progress_running">%1$d/%2$d poruka</string>
     <string name="backup_progress_saving">Spremanje sigurnosne kopije…</string>
     <string name="backup_progress_syncing">Sinkronizacija poruka…</string>
     <string name="backup_progress_finished">Dovršeno!</string>

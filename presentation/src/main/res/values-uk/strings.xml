@@ -169,7 +169,7 @@
     <string name="backup_disclaimer">На даний момент підтримуються лише SMS-повідомлення. Підтримка MMS-повідомлень та створення резервних копій за розкладом буде реалізована незабаром!</string>
     <string name="backup_now">Створити резервну копію</string>
     <string name="backup_progress_parsing">Аналіз резервної копії…</string>
-    <string name="backup_progress_running">%d/%d повідомлень</string>
+    <string name="backup_progress_running">%1$d/%2$d повідомлень</string>
     <string name="backup_progress_saving">Збереження резервної копії…</string>
     <string name="backup_progress_syncing">Синхронізація повідомлень…</string>
     <string name="backup_progress_finished">Готово!</string>

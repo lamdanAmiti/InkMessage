@@ -167,7 +167,7 @@
     <string name="backup_disclaimer">Vain tekstiviestejä voidaan varmuuskopioita ja palauttaa tällä hetkellä. Tuki multimediaviesteille ja varmuuskopiointien ajastus tulevat pian!</string>
     <string name="backup_now">Varmuuskopioi nyt</string>
     <string name="backup_progress_parsing">Varmuuskopiota jäsennetään…</string>
-    <string name="backup_progress_running">%d/%d viestiä</string>
+    <string name="backup_progress_running">%1$d/%2$d viestiä</string>
     <string name="backup_progress_saving">Varmuuskopiota tallennetaan…</string>
     <string name="backup_progress_syncing">Synkronoidaan viestejä…</string>
     <string name="backup_progress_finished">Valmis!</string>

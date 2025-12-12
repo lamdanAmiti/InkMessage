@@ -167,7 +167,7 @@
     <string name="backup_disclaimer">தற்போது, எஸ்எம்எஸ் மட்டுமே காப்பு மற்றும் மீட்டமைப்பால் ஆதரிக்கப்படுகிறது. எம்எம்எஸ் ஆதரவு மற்றும் திட்டமிடப்பட்ட காப்புப்பிரதிகள் விரைவில் வரும்!</string>
     <string name="backup_now">இப்போது காப்புப்பிரதி செய்</string>
     <string name="backup_progress_parsing">காப்புப் பிரதி பாகுபடுத்துகிறது…</string>
-    <string name="backup_progress_running">%d/%d செய்திகள்</string>
+    <string name="backup_progress_running">%1$d/%2$d செய்திகள்</string>
     <string name="backup_progress_saving">காப்புப்பிரதியைச் சேமிக்கிறது…</string>
     <string name="backup_progress_syncing">செய்திகளை ஒத்திசைக்கிறது…</string>
     <string name="backup_progress_finished">முடிந்தது!</string>

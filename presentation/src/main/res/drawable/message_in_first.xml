@@ -26,6 +26,9 @@
         android:topLeftRadius="18dp"
         android:topRightRadius="18dp" />
     <solid android:color="@android:color/white" />
+    <stroke
+        android:width="2dp"
+        android:color="@android:color/black" />
     <padding
         android:bottom="8dp"
         android:left="12dp"

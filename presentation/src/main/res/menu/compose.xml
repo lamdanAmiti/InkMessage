@@ -21,6 +21,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/copy"
+        android:icon="@drawable/ic_content_copy_black_24dp"
+        android:title="@string/compose_menu_copy"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/forward"
+        android:icon="@drawable/ic_forward_black_24dp"
+        android:title="@string/compose_menu_forward"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/add"
         android:icon="@drawable/ic_person_add_black_24dp"
         android:title="@string/menu_add_person"
@@ -29,7 +43,7 @@
 
     <item
         android:id="@+id/call"
-        android:icon="@drawable/ic_call_white_24dp"
+        android:icon="@drawable/ic_call_black_24dp"
         android:title="@string/menu_call"
         android:visible="false"
         app:showAsAction="always" />
@@ -68,23 +82,9 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/copy"
-        android:icon="@drawable/ic_content_copy_black_24dp"
-        android:title="@string/compose_menu_copy"
-        android:visible="false"
-        app:showAsAction="ifRoom" />
-
-    <item
         android:id="@+id/share"
         android:icon="@android:drawable/ic_menu_share"
         android:title="@string/compose_menu_share"
-        android:visible="false"
-        app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/forward"
-        android:icon="@drawable/ic_forward_black_24dp"
-        android:title="@string/compose_menu_forward"
         android:visible="false"
         app:showAsAction="ifRoom" />
 

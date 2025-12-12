@@ -165,7 +165,7 @@
     <string name="backup_disclaimer">اووامیک، تنها پشتیبان‌گیری و بازگردانی پیامک پشتیبانی می شود. پشتیبان‌گیری و برنامه‌ریزی برای پشتیبان‌گیری از MMS به زودی خواهد آمد!</string>
     <string name="backup_now">اکنون پشتیبان‌گیری کن</string>
     <string name="backup_progress_parsing">تجزیه پشتیبان…</string>
-    <string name="backup_progress_running">%d/%d پیام</string>
+    <string name="backup_progress_running">%1$d/%2$d پیام</string>
     <string name="backup_progress_saving">ستَنجاندن پشتیبان…</string>
     <string name="backup_progress_syncing">همگام‌سازی پیام‌ها…</string>
     <string name="backup_progress_finished">پایان یافت!</string>

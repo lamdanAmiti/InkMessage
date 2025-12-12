@@ -167,7 +167,7 @@
     <string name="backup_disclaimer">Per idag er bare mulig å sikkerhetskopiere SMS. MMS og planlagte sikkerhetskopier kommer snart.</string>
     <string name="backup_now">Sikkerhetskopier nå</string>
     <string name="backup_progress_parsing">Ser gjennom sikkerhetskopien …</string>
-    <string name="backup_progress_running">%d/%d meldinger</string>
+    <string name="backup_progress_running">%1$d/%2$d meldinger</string>
     <string name="backup_progress_saving">Lagrer sikkerhetskopi …</string>
     <string name="backup_progress_syncing">Synkroniserer meldinger …</string>
     <string name="backup_progress_finished">Ferdig!</string>

@@ -169,7 +169,7 @@
     <string name="backup_disclaimer">נכון לעכשיו, קיימת תמיכה בהודעות מסוג SMS בתכונת הגיבוי והשחזור. תמיכה ב־MMS וגיבויים מתוזמנים יגיעו בעתיד הקרוב!</string>
     <string name="backup_now">גבה כעת</string>
     <string name="backup_progress_parsing">הגיבוי מפוענח…</string>
-    <string name="backup_progress_running">%d/%d הודעות</string>
+    <string name="backup_progress_running">%1$d/%2$d הודעות</string>
     <string name="backup_progress_saving">שומר גיבוי…</string>
     <string name="backup_progress_syncing">מסנכרן הודעות…</string>
     <string name="backup_progress_finished">הסתיים!</string>

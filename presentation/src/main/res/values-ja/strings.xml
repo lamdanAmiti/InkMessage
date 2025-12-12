@@ -166,7 +166,7 @@
     <string name="backup_disclaimer">現在、SMS のみバックアップと復元に対応しています。 MMS 対応と定期バックアップは近日中に公開されます！</string>
     <string name="backup_now">今すぐバックアップ</string>
     <string name="backup_progress_parsing">バックアップを解析中...</string>
-    <string name="backup_progress_running">%d 件/%d 件のメッセージ</string>
+    <string name="backup_progress_running">%1$d 件/%2$d 件のメッセージ</string>
     <string name="backup_progress_saving">バックアップを保存しています...</string>
     <string name="backup_progress_syncing">メッセージを同期しています...</string>
     <string name="backup_progress_finished">終了しました！</string>

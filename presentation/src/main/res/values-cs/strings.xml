@@ -169,7 +169,7 @@
     <string name="backup_disclaimer">Momentálně jsou pro zálohování a obnovení podporovány pouze SMS. MMS podpora a plánované zálohy budou přidány již brzy!</string>
     <string name="backup_now">Zálohovat nyní</string>
     <string name="backup_progress_parsing">Analyzování zálohy…</string>
-    <string name="backup_progress_running">%d/%d zpráv</string>
+    <string name="backup_progress_running">%1$d/%2$d zpráv</string>
     <string name="backup_progress_saving">Ukládání zálohy…</string>
     <string name="backup_progress_syncing">Synchronizace zpráv…</string>
     <string name="backup_progress_finished">Hotovo!</string>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background (dashed line for remaining progress) -->
+    <item android:id="@android:id/background">
+        <shape android:shape="line">
+            <stroke
+                android:width="2dp"
+                android:color="@android:color/black"
+                android:dashWidth="4dp"
+                android:dashGap="3dp" />
+        </shape>
+    </item>
+    <!-- Progress (solid black line) -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="line">
+                <stroke
+                    android:width="2dp"
+                    android:color="@android:color/black" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

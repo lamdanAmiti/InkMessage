@@ -167,7 +167,7 @@
     <string name="backup_disclaimer">I øjeblikket understøtter Sikkerhedskopiering og Gendannelse kun SMS. MMS-understøttelse og planlagte sikkerhedskopieringer kommer snart!</string>
     <string name="backup_now">Sikkerhedskopiér nu</string>
     <string name="backup_progress_parsing">Analyserer sikkerhedskopi…</string>
-    <string name="backup_progress_running">%d/%d beskeder</string>
+    <string name="backup_progress_running">%1$d/%2$d beskeder</string>
     <string name="backup_progress_saving">Gemme sikkerhedskopi…</string>
     <string name="backup_progress_syncing">Synkroniserer beskeder…</string>
     <string name="backup_progress_finished">Færdig!</string>

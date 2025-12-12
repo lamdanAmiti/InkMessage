@@ -209,7 +209,7 @@
     <string name="backup_disclaimer">Obecnie można wykonywać i przwracać tylko kopie zapasowe SMSów. Wsparcie dla MMSów i planowane kopie zapasowe zostaną wprawdzone wkrótce!</string>
     <string name="backup_now">Utwórz kopię zapasową teraz</string>
     <string name="backup_progress_parsing">Przetwarzanie kopii zapasowej…</string>
-    <string name="backup_progress_running">%d/%d wiadomości</string>
+    <string name="backup_progress_running">%1$d/%2$d wiadomości</string>
     <string name="backup_progress_saving">Zapisywanie kopii zapasowej…</string>
     <string name="backup_progress_syncing">Synchronizowanie wiadomości…</string>
     <string name="backup_progress_finished">Zakończono!</string>

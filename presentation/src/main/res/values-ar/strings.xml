@@ -171,7 +171,7 @@
     <string name="backup_disclaimer">النسخ الاحتياطي والاستعادة متاحة الآن فقط للرسائل النصّية. دعم رسائل الوسائط والرسائل المجدولة قادم قريباً!</string>
     <string name="backup_now">النسخ الاحتياطي الآن</string>
     <string name="backup_progress_parsing">توزيع النسخ الاحتياطي…</string>
-    <string name="backup_progress_running">%d/%d رسائل</string>
+    <string name="backup_progress_running">%1$d/%2$d رسائل</string>
     <string name="backup_progress_saving">جارٍ حفظُ النسخة الاحتياطية…</string>
     <string name="backup_progress_syncing">مزامنة الرسائل جارية…</string>
     <string name="backup_progress_finished">تم!</string>

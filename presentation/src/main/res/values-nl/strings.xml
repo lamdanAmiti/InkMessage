@@ -167,7 +167,7 @@
     <string name="backup_disclaimer">Op dit moment wordt alleen SMS ondersteund door back-up en terugzetten. MMS ondersteuning en geplande back-ups zullen spoedig beschikbaar komen!</string>
     <string name="backup_now">Nu back-up maken</string>
     <string name="backup_progress_parsing">Back-up samenstellen…</string>
-    <string name="backup_progress_running">%d/%d berichten</string>
+    <string name="backup_progress_running">%1$d/%2$d berichten</string>
     <string name="backup_progress_saving">Back-up opslaan…</string>
     <string name="backup_progress_syncing">Synchroniseren van berichten…</string>
     <string name="backup_progress_finished">Klaar!</string>

@@ -34,7 +34,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    namespace 'dev.octoshrimpy.quik.data'
+    namespace 'com.message.ink.data'
 }
 
 dependencies {

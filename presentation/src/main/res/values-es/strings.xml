@@ -167,7 +167,7 @@
     <string name="backup_disclaimer">Actualmente, sólo los SMS son soportados por la copia de seguridad y restauración. ¡El soporte para MMS y las copias de seguridad programadas se realizarán pronto!</string>
     <string name="backup_now">Copiar ahora</string>
     <string name="backup_progress_parsing">Analizando copia de seguridad…</string>
-    <string name="backup_progress_running">%d/%d mensajes</string>
+    <string name="backup_progress_running">%1$d/%2$d mensajes</string>
     <string name="backup_progress_saving">Guardando copia de seguridad…</string>
     <string name="backup_progress_syncing">Sincronizando mensajes…</string>
     <string name="backup_progress_finished">¡Terminado!</string>

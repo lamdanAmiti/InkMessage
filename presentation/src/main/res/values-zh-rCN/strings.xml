@@ -166,7 +166,7 @@
     <string name="backup_disclaimer">目前只有短信支持备份和恢复。彩信支持和定时备份将很快到来!</string>
     <string name="backup_now">立即备份</string>
     <string name="backup_progress_parsing">正在分析备份…</string>
-    <string name="backup_progress_running">%d/%d 消息</string>
+    <string name="backup_progress_running">%1$d/%2$d 消息</string>
     <string name="backup_progress_saving">正在保存备份…</string>
     <string name="backup_progress_syncing">正在同步信息…</string>
     <string name="backup_progress_finished">完成！</string>

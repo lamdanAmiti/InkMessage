@@ -17,84 +17,58 @@
   ~ You should have received a copy of the GNU General Public License
   ~ along with QKSMS.  If not, see <http://www.gnu.org/licenses/>.
   -->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frame"
-    android:layout_width="280dp"
-    android:layout_height="140dp"
+    android:layout_width="240dp"
+    android:layout_height="48dp"
     android:layout_marginTop="2dp"
-    android:clipChildren="false">
-
-    <dev.octoshrimpy.quik.common.widget.BubbleImageView
-        android:id="@+id/thumbnail"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:adjustViewBounds="false"
-        android:minHeight="140dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/rectangle" />
+    android:background="@drawable/audio_player_background"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="8dp"
+    android:paddingEnd="12dp">
 
     <ImageView
-        android:id="@+id/soundWave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/audio_preview_foreground" />
+        android:id="@+id/playPause"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/circle"
+        android:backgroundTint="@android:color/white"
+        android:padding="6dp"
+        android:src="@drawable/exo_icon_play"
+        app:tint="@android:color/black" />
 
     <SeekBar
         android:id="@+id/seekBar"
-        style="@style/Widget.AppCompat.SeekBar"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:max="10"
-        android:progress="5"
-        android:progressTint="@color/tools_theme"
-        android:thumbTint="@color/tools_theme" />
+        android:layout_weight="1"
+        android:layout_marginStart="8dp"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/audio_seekbar_progress"
+        android:thumb="@drawable/audio_seekbar_thumb"
+        android:splitTrack="false" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="12dp">
+    <!-- Hidden views to maintain compatibility with AudioBinder -->
+    <com.message.ink.common.widget.BubbleImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
 
-        <ImageView
-            android:id="@+id/playPause"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="12dp"
-            android:background="@drawable/circle"
-            android:elevation="4dp"
-            android:padding="6dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/exo_icon_play"
-            app:tint="@color/tools_theme" />
+    <ImageView
+        android:id="@+id/soundWave"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
 
-        <dev.octoshrimpy.quik.common.widget.QkTextView
-            android:id="@+id/metadataTitle"
-            style="@style/TextPrimary"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
-            android:background="@drawable/rounded_rectangle_22dp"
-            android:backgroundTint="@color/tools_theme"
-            android:ellipsize="marquee"
-            android:fadingEdge="horizontal"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:padding="4dp"
-            android:scrollHorizontally="true"
-            android:singleLine="true"
-            android:text="@tools:sample/lorem/random[0]"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/playPause" />
+    <com.message.ink.common.widget.QkTextView
+        android:id="@+id/metadataTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</FrameLayout>
+</LinearLayout>

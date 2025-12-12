@@ -1,0 +1,198 @@
+/*
+ * Copyright (C) 2017 Moez Bhatti <moez.bhatti@gmail.com>
+ *
+ * This file is part of QKSMS.
+ *
+ * QKSMS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * QKSMS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with QKSMS.  If not, see <http://www.gnu.org/licenses/>.
+ */
+package com.message.ink.feature.compose.part
+
+import android.content.Context
+import android.graphics.Color
+import android.media.AudioAttributes
+import android.widget.SeekBar
+import com.message.ink.common.QkMediaPlayer
+import com.message.ink.R
+import com.message.ink.common.Navigator
+import com.message.ink.common.base.QkViewHolder
+import com.message.ink.common.util.Colors
+import com.message.ink.extensions.isAudio
+import com.message.ink.extensions.resourceExists
+import com.message.ink.feature.compose.MessagesAdapter
+import com.message.ink.model.Message
+import com.message.ink.model.MmsPart
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.mms_audio_preview_list_item.*
+import java.util.concurrent.TimeUnit
+import javax.inject.Inject
+
+
+class AudioBinder @Inject constructor(colors: Colors, private val context: Context) :
+    PartBinder() {
+
+    @Inject lateinit var navigator: Navigator
+
+    override val partLayout = R.layout.mms_audio_preview_list_item
+    override var theme = colors.theme()
+
+    override fun canBindPart(part: MmsPart) = part.isAudio()
+
+    var audioState = MessagesAdapter.AudioState(-1, QkMediaPlayer.PlayingState.Stopped)
+
+    private fun startSeekBarUpdateTimer() {
+        audioState.apply {
+            seekBarUpdater?.dispose()
+            seekBarUpdater = Observable.interval(500, TimeUnit.MILLISECONDS)
+                .subscribeOn(Schedulers.single())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnNext {
+                    viewHolder?.seekBar?.progress = QkMediaPlayer.currentPosition
+                }
+                .subscribe()
+        }
+    }
+
+    private fun uiToPlaying(viewHolder: QkViewHolder) {
+        viewHolder.seekBar.max = QkMediaPlayer.duration
+        viewHolder.seekBar.isEnabled = true
+        viewHolder.seekBar.progress = QkMediaPlayer.currentPosition
+        viewHolder.playPause.setImageResource(R.drawable.exo_icon_pause)
+        viewHolder.playPause.tag = QkMediaPlayer.PlayingState.Playing
+    }
+
+    private fun uiToPaused(viewHolder: QkViewHolder) {
+        viewHolder.playPause.setImageResource(R.drawable.exo_icon_play)
+        viewHolder.playPause.tag = QkMediaPlayer.PlayingState.Paused
+    }
+
+    private fun uiToStopped(viewHolder: QkViewHolder) {
+        viewHolder.seekBar.progress = 0
+        viewHolder.seekBar.max = 0
+        viewHolder.seekBar.isEnabled = false
+        viewHolder.playPause.setImageResource(R.drawable.exo_icon_play)
+        viewHolder.playPause.tag = QkMediaPlayer.PlayingState.Stopped
+    }
+
+    override fun bindPart(
+        holder: QkViewHolder,
+        part: MmsPart,
+        message: Message,
+        canGroupWithPrevious: Boolean,
+        canGroupWithNext: Boolean,
+    ) {
+        // play/pause button click handling
+        holder.playPause.setOnClickListener {
+            when (holder.playPause.tag) {
+                QkMediaPlayer.PlayingState.Playing -> {
+                    if (audioState.partId == part.id) {
+                        QkMediaPlayer.pause()
+                        uiToPaused(holder)
+                        audioState.state = QkMediaPlayer.PlayingState.Paused
+
+                        // stop progress bar update timer
+                        audioState.seekBarUpdater?.dispose()
+                    }
+                }
+                QkMediaPlayer.PlayingState.Paused -> {
+                    if (audioState.partId == part.id) {
+                        QkMediaPlayer.start()
+                        uiToPlaying(holder)
+                        audioState.state = QkMediaPlayer.PlayingState.Playing
+
+                        // start progress bar update timer
+                        startSeekBarUpdateTimer()
+                    }
+                }
+                else -> {
+                    if (part.getUri().resourceExists(context)) {
+                        QkMediaPlayer.reset() // make sure reset before trying to (re-)use
+
+                        QkMediaPlayer.setOnPreparedListener {
+                            // start media playing
+                            QkMediaPlayer.start()
+
+                            uiToPlaying(holder)
+
+                            // set current view holder and part as active
+                            audioState.apply {
+                                audioState.state = QkMediaPlayer.PlayingState.Playing
+                                partId = part.id
+                                viewHolder = holder
+                            }
+
+                            // start progress bar update timer
+                            startSeekBarUpdateTimer()
+                        }
+
+                        QkMediaPlayer.setOnCompletionListener {   // also called on error because we don't have an onerrorlistener
+                            audioState.apply {
+                                // if this part is currently active, set it to stopped and inactive
+                                if ((partId == part.id) && (viewHolder != null))
+                                    uiToStopped(viewHolder!!)
+
+                                state = QkMediaPlayer.PlayingState.Stopped
+                                partId = -1
+                                viewHolder = null
+                            }
+                        }
+
+                        // start the media player play sequence
+                        QkMediaPlayer.setAudioAttributes(
+                            AudioAttributes.Builder()
+                                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)     // music, maybe?? could be voice. don't want to use CONTENT_TYPE_UNKNOWN though
+                                .setUsage(AudioAttributes.USAGE_MEDIA)
+                                .build()
+                        )
+
+                        QkMediaPlayer.setDataSource(context, part.getUri())
+
+                        QkMediaPlayer.prepareAsync()
+                    }
+                }
+            }
+        }
+
+        // if this item is the active active audio item update the active view holder
+        if (audioState.partId == part.id)
+            audioState.viewHolder = holder
+        // else, this is not the active item so ensure the stored view holder is not this one
+        else if (audioState.viewHolder == holder)
+            audioState.viewHolder = null
+
+        // seek bar listener
+        holder.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(p0: SeekBar?, progress: Int, fromUser: Boolean) {
+                // if seek was initiated by the user and this part is currently playing
+                if (fromUser)
+                    QkMediaPlayer.seekTo(progress)
+            }
+            override fun onStartTrackingTouch(p0: SeekBar?) { /* nothing */ }
+            override fun onStopTrackingTouch(p0: SeekBar?) { /* nothing */ }
+        })
+
+        // playPause button state
+        holder.playPause.apply {
+            if ((audioState.partId == part.id) &&
+                (audioState.state == QkMediaPlayer.PlayingState.Playing))
+                uiToPlaying(holder)
+            else if ((audioState.partId == part.id) &&
+                (audioState.state == QkMediaPlayer.PlayingState.Paused))
+                uiToPaused(holder)
+            else
+                uiToStopped(holder)
+        }
+    }
+}

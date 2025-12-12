@@ -27,45 +27,173 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:animateLayoutChanges="true">
+        android:animateLayoutChanges="false">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             style="@style/Toolbar"
-            android:animateLayoutChanges="true"
+            android:animateLayoutChanges="false"
             app:contentInsetStartWithNavigation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <dev.octoshrimpy.quik.common.widget.QkTextView
+            <LinearLayout
+                android:id="@+id/toolbarContent"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Menu Icon -->
+                <ImageView
+                    android:id="@+id/settingsIcon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_menu_24dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/drawer_settings"
+                    app:tint="#000000" />
+
+                <!-- Filter Tabs with Search and Compose -->
+                <LinearLayout
+                    android:id="@+id/filterTabs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="8dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/filter_tabs_background">
+
+                    <!-- Search Tab -->
+                    <FrameLayout
+                        android:id="@+id/searchIcon"
+                        android:layout_width="36dp"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_search_black_24dp"
+                            app:tint="#000000" />
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/filterAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:gravity="center"
+                        android:text="@string/filter_all"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/filter_tab_selected"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/filterGroups"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:gravity="center"
+                        android:text="@string/filter_groups"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:background="@android:color/transparent"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/filterUnknown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:gravity="center"
+                        android:text="@string/filter_unknown"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:background="@android:color/transparent"
+                        android:textColor="#000000" />
+
+                    <!-- Compose Tab -->
+                    <FrameLayout
+                        android:id="@+id/compose"
+                        android:layout_width="36dp"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_edit_black_24dp"
+                            android:contentDescription="@string/main_fab_cd"
+                            app:tint="#000000" />
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Hidden elements for search mode -->
+            <com.message.ink.common.widget.QkTextView
                 android:id="@+id/toolbarTitle"
                 style="@style/ToolbarText"
-                android:layout_marginStart="16dp"
-                android:visibility="gone" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="@string/title_conversations" />
 
-            <dev.octoshrimpy.quik.common.widget.QkEditText
-                android:id="@+id/toolbarSearch"
-                style="@style/ToolbarText"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:minHeight="40dp"
-                android:background="@drawable/rounded_rectangle_24dp"
-                android:backgroundTint="?attr/bubbleColor"
-                android:hint="@string/title_conversations"
-                android:inputType="text"
-                android:maxLines="1"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:textColorHint="?android:attr/textColorTertiary"
-                app:textSize="primary"
-                tools:textSize="16sp"
-                android:focusable="true"
-                android:nextFocusRight="@+id/compose" />
+            <!-- Search input container - takes over entire toolbar when active -->
+            <LinearLayout
+                android:id="@+id/searchContainer"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/searchBack"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_arrow_back_black_24dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/abc_action_bar_up_description"
+                    app:tint="#000000" />
+
+                <com.message.ink.common.widget.QkEditText
+                    android:id="@+id/toolbarSearch"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/rounded_rectangle_24dp"
+                    android:backgroundTint="#F0F0F0"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#888888"
+                    android:hint="Search"
+                    android:textSize="16sp"
+                    android:imeOptions="actionSearch" />
+
+            </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
 
-        <dev.octoshrimpy.quik.common.widget.QkTextView
+        <com.message.ink.common.widget.QkTextView
             android:id="@+id/empty"
             style="@style/TextSecondary"
             android:layout_width="match_parent"
@@ -84,27 +212,12 @@
             android:layout_height="0dp"
             android:clipChildren="false"
             android:clipToPadding="false"
-            android:paddingTop="8dp"
+            android:paddingTop="16dp"
             android:paddingBottom="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@id/bottom"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
             tools:listitem="@layout/conversation_list_item" />
-
-        <ImageView
-            android:id="@+id/compose"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_margin="16dp"
-            android:background="@drawable/circle_ripple"
-            android:contentDescription="@string/main_fab_cd"
-            android:elevation="8dp"
-            android:padding="16dp"
-            android:src="@drawable/ic_add_black_24dp"
-            app:layout_constraintBottom_toTopOf="@id/bottom"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:backgroundTint="@color/tools_theme"
-            app:tint="@color/white" />
 
         <View
             android:layout_width="0dp"

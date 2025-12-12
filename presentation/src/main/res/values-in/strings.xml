@@ -166,7 +166,7 @@
     <string name="backup_disclaimer">Saat ini, Cadangan dan Pemulihan hanya mendukung pesan SMS. Dukungan MMS dan cadangan terjadwal akan segera datang!</string>
     <string name="backup_now">Cadangkan sekarang</string>
     <string name="backup_progress_parsing">Membaca cadangan…</string>
-    <string name="backup_progress_running">%d/%d pesan</string>
+    <string name="backup_progress_running">%1$d/%2$d pesan</string>
     <string name="backup_progress_saving">Menyimpan cadangan…</string>
     <string name="backup_progress_syncing">Menyinkronkan pesan…</string>
     <string name="backup_progress_finished">Selesai!</string>

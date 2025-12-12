@@ -167,7 +167,7 @@
     <string name="backup_disclaimer">এইমুহুর্তে, ব্যাকআপ এবং পুনরুদ্ধার শুধুমাত্র এসএমএস এ করতে পারবেন । এমএমএস সাপর্ট  ও  শিডিউল  ব্যাকআপ শীঘ্রই আসছে!</string>
     <string name="backup_now">ব্যাকআপ করুন </string>
     <string name="backup_progress_parsing">ব্যাক-আপ পার্স করা হচ্ছে…</string>
-    <string name="backup_progress_running">%d/%d বার্তা</string>
+    <string name="backup_progress_running">%1$d/%2$d বার্তা</string>
     <string name="backup_progress_saving">ব্যাক-আপ সংরক্ষণ করা হচ্ছে…</string>
     <string name="backup_progress_syncing">বার্তাগুলো সিঙ্ক করা হচ্ছে…</string>
     <string name="backup_progress_finished">শেষ হয়েছে!</string>

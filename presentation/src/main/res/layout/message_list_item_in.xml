@@ -23,6 +23,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:longClickable="true"
     android:background="?attr/selectableItemBackground">
 
     <LinearLayout
@@ -35,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <dev.octoshrimpy.quik.common.widget.QkTextView
+            <com.message.ink.common.widget.QkTextView
                 android:id="@+id/timestamp"
                 style="@style/TextSecondary"
                 android:layout_width="wrap_content"
@@ -60,7 +63,7 @@
                 app:layout_constraintTop_toTopOf="@id/timestamp"
                 app:tint="?android:attr/textColorSecondary" />
 
-            <dev.octoshrimpy.quik.common.widget.QkTextView
+            <com.message.ink.common.widget.QkTextView
                 android:id="@+id/simIndex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -83,7 +86,7 @@
             android:clipToPadding="false"
             android:clipChildren="false">
 
-            <dev.octoshrimpy.quik.common.widget.AvatarView
+            <com.message.ink.common.widget.AvatarView
                 android:id="@+id/avatar"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
@@ -100,19 +103,20 @@
                 android:paddingEnd="4dp"
                 android:paddingStart="4dp">
 
-                <dev.octoshrimpy.quik.common.widget.QkContextMenuRecyclerViewLongMmsPart
+                <com.message.ink.common.widget.QkContextMenuRecyclerViewLongMmsPart
                     android:id="@+id/parts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:nestedScrollingEnabled="false"
+                    android:longClickable="false"
                     android:orientation="vertical"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:itemCount="1"
                     tools:listitem="@layout/mms_image_preview_list_item" />
 
-                <dev.octoshrimpy.quik.common.widget.TightTextView
+                <com.message.ink.common.widget.TightTextView
                     android:id="@+id/body"
                     style="@style/TextPrimary"
                     android:layout_width="wrap_content"
@@ -120,11 +124,13 @@
                     android:layout_alignParentStart="true"
                     android:layout_below="@id/parts"
                     android:layout_marginTop="2dp"
-                    android:autoLink="email|phone|web"
                     android:background="@drawable/message_only"
                     android:gravity="start|center_vertical"
                     android:minHeight="36dp"
-                    android:textIsSelectable="true"
+                    android:textIsSelectable="false"
+                    android:longClickable="true"
+                    android:clickable="true"
+                    android:focusable="true"
                     tools:backgroundTint="@color/tools_theme"
                     tools:text="@tools:sample/lorem/random" />
 
@@ -162,7 +168,7 @@
 
         </LinearLayout>
 
-        <dev.octoshrimpy.quik.common.widget.QkTextView
+        <com.message.ink.common.widget.QkTextView
             android:id="@+id/status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

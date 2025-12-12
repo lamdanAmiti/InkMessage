@@ -167,7 +167,7 @@
     <string name="backup_disclaimer">Jelenleg a biztonsági mentés és visszaállítás funkció csak SMS-eket támogat. Az MMS-ek támogatása és az ütemezett biztonsági mentések hamarosan elérhetőek lesznek!</string>
     <string name="backup_now">Mentés most</string>
     <string name="backup_progress_parsing">Mentés elemzése…</string>
-    <string name="backup_progress_running">%d/%d üzenet</string>
+    <string name="backup_progress_running">%1$d/%2$d üzenet</string>
     <string name="backup_progress_saving">Mentés…</string>
     <string name="backup_progress_syncing">Üzenetek szinkronizálása…</string>
     <string name="backup_progress_finished">Kész!</string>

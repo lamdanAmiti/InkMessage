@@ -166,7 +166,7 @@
     <string name="backup_disclaimer">Hiện tại, tính năng sao lưu và khôi phục chỉ hỗ trợ SMS. Việc hỗ trợ MMS và tính năng sao lưu định kì sẽ có sớm!</string>
     <string name="backup_now">Sao lưu ngay</string>
     <string name="backup_progress_parsing">Đang phân tích bản sao lưu…</string>
-    <string name="backup_progress_running">%d/%d tin nhắn</string>
+    <string name="backup_progress_running">%1$d/%2$d tin nhắn</string>
     <string name="backup_progress_saving">Đang lưu bản sao lưu…</string>
     <string name="backup_progress_syncing">Đang đồng bộ tin nhắn…</string>
     <string name="backup_progress_finished">Hoàn tất!</string>

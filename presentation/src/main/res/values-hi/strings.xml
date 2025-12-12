@@ -167,7 +167,7 @@
     <string name="backup_disclaimer">वर्तमान में, केवल एसएमएस बैकअप और बहाल द्वारा समर्थित है| एमएमएस समर्थन और अनुसूचित बैकअप जल्द ही आ रहा है!</string>
     <string name="backup_now">अभी बैकअप लें</string>
     <string name="backup_progress_parsing">बैकअप पदच्छेद हो रहा है...</string>
-    <string name="backup_progress_running">%d/%d संदेशें</string>
+    <string name="backup_progress_running">%1$d/%2$d संदेशें</string>
     <string name="backup_progress_saving">बैकअप सहेजा जा रहा है...</string>
     <string name="backup_progress_syncing">संदेश सिंक्रनाइज़ हो रहा है...</string>
     <string name="backup_progress_finished">समाप्त!</string>

@@ -26,30 +26,30 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId 'dev.octoshrimpy.quik'
+        applicationId 'com.message.ink'
         minSdkVersion 23
         targetSdkVersion 33
         versionCode 2233
         versionName '4.3.1'
-        setProperty("archivesBaseName", "QUIK-v${versionName}")
+        setProperty("archivesBaseName", "InkMessage-v${versionName}")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
         debug // Uses the default debug keystore.
-        release {
-            def keystoreProps = new Properties()
-            def keystorePropsFile = rootProject.file('./.gradle/.gradlerc')
-            storeFile file('./my-release-key.keystore')
-            keyAlias 'quik_release'
-            if (keystorePropsFile.exists()) {
-                keystoreProps.load(new FileInputStream(keystorePropsFile))
-            } else {
-                // do nothing
-            }
-            storePassword keystoreProps['storePassword']
-            keyPassword keystoreProps['keyPassword']
-        }
+//        release {
+//            def keystoreProps = new Properties()
+//            def keystorePropsFile = rootProject.file('./.gradle/.gradlerc')
+//            storeFile file('./my-release-key.keystore')
+//            keyAlias 'quik_release'
+//            if (keystorePropsFile.exists()) {
+//                keystoreProps.load(new FileInputStream(keystorePropsFile))
+//            } else {
+//                // do nothing
+//            }
+//            storePassword keystoreProps['storePassword']
+//            keyPassword keystoreProps['keyPassword']
+//        }
     }
 
     dependenciesInfo {
@@ -64,12 +64,12 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+            signingConfig signingConfigs.debug
         }
         debug {
             applicationIdSuffix ".debug"
             versionNameSuffix "-debug"
-            resValue("string", "app_name", "QUIK-Debug")
+            resValue("string", "app_name", "InkMessage-Debug")
             resValue("string", "application_id", defaultConfig.applicationId)
             signingConfig signingConfigs.debug
         }
@@ -77,7 +77,7 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+            signingConfig signingConfigs.debug
             matchingFallbacks = ['release']
             applicationIdSuffix ".fdroid"
         }
@@ -94,17 +94,18 @@ android {
 
     lint {
         abortOnError false
+        checkReleaseBuilds false
     }
-    namespace 'dev.octoshrimpy.quik'
+    namespace 'com.message.ink'
     buildFeatures {
         buildConfig true
         viewBinding true
     }
-    if (System.getenv("CI") == "true") {
-        signingConfigs.release.storePassword = System.getenv("keystore_password")
-        signingConfigs.release.keyAlias = System.getenv("key_alias")
-        signingConfigs.release.keyPassword = System.getenv("key_password")
-    }
+//    if (System.getenv("CI") == "true") {
+//        signingConfigs.release.storePassword = System.getenv("keystore_password")
+//        signingConfigs.release.keyAlias = System.getenv("key_alias")
+//        signingConfigs.release.keyPassword = System.getenv("key_password")
+//    }
 }
 
 androidExtensions {
@@ -219,11 +220,11 @@ dependencies {
 
 }
 // Check to make sure that the keystore file is present when building a release
-gradle.taskGraph.whenReady { taskGraph ->
-    if ((taskGraph.hasTask(':assembleRelease') ||
-            taskGraph.allTasks.any { it.name == 'assembleRelease' }) &&
-            !file('./.gradle/.gradlerc').exists() &&
-            System.getenv("CI") != "true") {
-        throw new GradleException("Keystore properties file not found")
-    }
-}
+//gradle.taskGraph.whenReady { taskGraph ->
+//    if ((taskGraph.hasTask(':assembleRelease') ||
+//            taskGraph.allTasks.any { it.name == 'assembleRelease' }) &&
+//            !rootProject.file('./.gradle/.gradlerc').exists() &&
+//            System.getenv("CI") != "true") {
+//        throw new GradleException("Keystore properties file not found")
+//    }
+//}

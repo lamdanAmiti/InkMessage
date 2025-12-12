@@ -166,7 +166,7 @@
     <string name="backup_disclaimer">目前只有簡訊支援備份和還原，多媒體和排程簡訊備份將在不久後加入！</string>
     <string name="backup_now">立即備份</string>
     <string name="backup_progress_parsing">正在解析備份…</string>
-    <string name="backup_progress_running">%d/%d 條訊息</string>
+    <string name="backup_progress_running">%1$d/%2$d 條訊息</string>
     <string name="backup_progress_saving">正在儲存備份…</string>
     <string name="backup_progress_syncing">正在同步訊息…</string>
     <string name="backup_progress_finished">完成！</string>

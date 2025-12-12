@@ -167,7 +167,7 @@
     <string name="backup_disclaimer">Atualmente, apenas está disponível o backup e restauro de SMS. O suporte a MMS e o agendamento de backups será adicionado brevemente!</string>
     <string name="backup_now">Criar backup</string>
     <string name="backup_progress_parsing">A analisar backup…</string>
-    <string name="backup_progress_running">%d/%d mensagens</string>
+    <string name="backup_progress_running">%1$d/%2$d mensagens</string>
     <string name="backup_progress_saving">A guardar backup…</string>
     <string name="backup_progress_syncing">A sincronizar mensagens…</string>
     <string name="backup_progress_finished">Terminado!</string>

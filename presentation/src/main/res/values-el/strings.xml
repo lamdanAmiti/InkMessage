@@ -167,7 +167,7 @@
     <string name="backup_disclaimer">Προς το παρόν, μπορούν να δημιουργηθούν αντίγραφα ασφαλείας μόνο για SMS. Η υποστήριξη MMS και ο προγραμματισμός αντιγράφων ασφαλείας θα προστεθούν σύντομα!</string>
     <string name="backup_now">Δημιουργία αντιγράφου τώρα</string>
     <string name="backup_progress_parsing">Ανάγνωση αντιγράφου ασφαλείας…</string>
-    <string name="backup_progress_running">%d/%d μηνύματα</string>
+    <string name="backup_progress_running">%1$d/%2$d μηνύματα</string>
     <string name="backup_progress_saving">Αποθήκευση αντιγράφου ασφαλείας…</string>
     <string name="backup_progress_syncing">Συγχρονισμός μηνυμάτων…</string>
     <string name="backup_progress_finished">Ολοκληρώθηκε!</string>

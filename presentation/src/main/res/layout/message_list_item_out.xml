@@ -22,6 +22,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:longClickable="true"
     android:background="?attr/selectableItemBackground">
 
     <LinearLayout
@@ -37,7 +40,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/compose_message_item">
 
-            <dev.octoshrimpy.quik.common.widget.QkTextView
+            <com.message.ink.common.widget.QkTextView
                 android:id="@+id/timestamp"
                 style="@style/TextSecondary"
                 android:layout_width="wrap_content"
@@ -63,7 +66,7 @@
                 app:layout_constraintTop_toTopOf="@id/timestamp"
                 app:tint="?android:attr/textColorSecondary" />
 
-            <dev.octoshrimpy.quik.common.widget.QkTextView
+            <com.message.ink.common.widget.QkTextView
                 android:id="@+id/simIndex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -77,7 +80,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <dev.octoshrimpy.quik.common.widget.QkContextMenuRecyclerViewLongMmsPart
+        <com.message.ink.common.widget.QkContextMenuRecyclerViewLongMmsPart
             android:id="@+id/parts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -85,6 +88,7 @@
             android:layout_marginBottom="2dp"
             android:gravity="end"
             android:nestedScrollingEnabled="false"
+            android:longClickable="false"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="1"
@@ -155,17 +159,19 @@
                     android:clipToPadding="false"
                     android:clipChildren="false">
 
-                    <dev.octoshrimpy.quik.common.widget.TightTextView
+                    <com.message.ink.common.widget.TightTextView
                         android:id="@+id/body"
                         style="@style/TextPrimary"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:autoLink="email|phone|web"
                         android:background="@drawable/message_only"
-                        android:backgroundTint="?attr/bubbleColor"
+                        android:textColor="#000000"
                         android:gravity="start|center_vertical"
                         android:minHeight="36dp"
-                        android:textIsSelectable="true" />
+                        android:textIsSelectable="false"
+                        android:longClickable="true"
+                        android:clickable="true"
+                        android:focusable="true" />
 
                     <LinearLayout
                         android:id="@+id/reactions"
@@ -224,7 +230,7 @@
             android:layout_gravity="end"
             android:orientation="horizontal">
 
-            <dev.octoshrimpy.quik.common.widget.QkTextView
+            <com.message.ink.common.widget.QkTextView
                 android:id="@+id/status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

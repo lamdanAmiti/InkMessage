@@ -167,7 +167,7 @@
     <string name="backup_disclaimer">Şu anda sadece SMS yedekleme ve geri yükleme desteklenmektedir. MMS desteği ve zamanlanmış ileti yedeklemeleri çok yakında !</string>
     <string name="backup_now">Şimdi yedekle</string>
     <string name="backup_progress_parsing">Yedekleme ayrılıyor…</string>
-    <string name="backup_progress_running">%d%d ileti</string>
+    <string name="backup_progress_running">%1$d%2$d ileti</string>
     <string name="backup_progress_saving">Yedekleme kaydediliyor...</string>
     <string name="backup_progress_syncing">İletiler senkronize ediliyor…</string>
     <string name="backup_progress_finished">Tamamlandı!</string>
