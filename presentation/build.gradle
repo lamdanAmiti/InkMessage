@@ -29,8 +29,8 @@ android {
         applicationId 'com.message.ink'
         minSdkVersion 23
         targetSdkVersion 33
-        versionCode 2
-        versionName '0.0.2'
+        versionCode 4
+        versionName '0.0.4'
         setProperty("archivesBaseName", "InkMessage-v${versionName}")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

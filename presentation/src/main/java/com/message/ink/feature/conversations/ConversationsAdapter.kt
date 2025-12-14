@@ -178,7 +178,7 @@ class ConversationsAdapter @Inject constructor(
         disposables.add(disposable)
 
         holder.pinned.isVisible = conversation.pinned
-        holder.unread.setTint(theme)
+        holder.unread.setTint(0xFF000000.toInt())
     }
 
     override fun getItemViewType(position: Int): Int {

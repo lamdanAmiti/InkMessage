@@ -29,7 +29,7 @@ import timber.log.Timber
 
 fun Recipient.getThemedIcon(context: Context, theme: Colors.Theme, width: Int, height: Int): IconCompat {
     var icon : IconCompat? = null
-    if(contact != null) {
+    if(contact?.photoUri != null) {
         val req = GlideApp.with(context)
             .asBitmap()
             .circleCrop()
